@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interrogation et Modification MIB</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Opération GET</h2>
+        <form action="mib.php" method="post">
+            <input type="hidden" name="operation" value="get">
+            <label for="get_hostname">Nom d'hôte du routeur/switch :</label>
+            <input type="text" id="get_hostname" name="hostname" required>
+            <label for="get_community">Communauté SNMP :</label>
+            <input type="text" id="get_community" name="community" required>
+            <label for="get_oid">OID à récupérer :</label>
+            <input type="text" id="get_oid" name="oid" required>
+            <button type="submit">GET</button>
+        </form>
+	</div>
+	<div class="container2">
+	
+        <h2>Opération SET</h2>
+        <form action="mib.php" method="post">
+            <input type="hidden" name="operation" value="set">
+            <label for="set_hostname">Nom d'hôte du routeur/switch :</label>
+            <input type="text" id="set_hostname" name="hostname" required>
+            <label for="set_community">Communauté SNMP :</label>
+            <input type="text" id="set_community" name="community" required>
+            <label for="set_oid">OID à modifier :</label>
+            <input type="text" id="set_oid" name="oid" required>
+			<label for="set_type">Type de l'OID à modifier :</label>
+            <input type="text" id="set_type" name="type" required>
+            <label for="set_value">Nouvelle valeur :</label>
+            <input type="text" id="set_value" name="value" required>
+            <button type="submit">SET</button>
+        </form>
+    </div>
+</body>
+</html>
